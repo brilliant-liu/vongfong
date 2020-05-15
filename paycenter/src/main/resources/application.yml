@@ -1,0 +1,24 @@
+
+server:
+  port: 8001
+
+spring:
+  application:
+    name: paycenter
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://106.54.87.66:13306/vongfong?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: icopdb-dev
+    password: icopdb
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.icop.vongfong.entities
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
