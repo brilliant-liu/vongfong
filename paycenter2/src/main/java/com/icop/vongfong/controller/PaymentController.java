@@ -71,6 +71,6 @@ public class PaymentController {
             }
             result.put(service,list);
         }
-        return new CommonResult<Map>(200,"查询微服务信息："+serverPort,result);
+        return new CommonResult<Map>(444,"查询微服务信息："+serverPort,result);
     }
 }
