@@ -1,5 +1,5 @@
 server:
-  port: 8002
+  port: 80
 
 
 spring:
@@ -11,4 +11,8 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7001.com:7001/eureka
+  instance:
+    instance-id: ordercenter80 # 修改主机名称（Eureka Instance中status中的显示问题）
+    prefer-ip-address: true # 访问路显示IP地址
+
