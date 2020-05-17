@@ -1,6 +1,6 @@
 
 server:
-  port: 8001
+  port: 8002
 
 spring:
   application:
@@ -23,9 +23,6 @@ eureka:
     service-url:
       # defaultZone: http://eureka7002.com:7002/eureka # 单机版
       defaultZone: http://eureka7002.com:7002/eureka,http://eureka7001.com:7001/eureka
-    eureka-server-u-r-l-context:
-  instance:  # actuator微服务信息配置
-    instance-id: paycenter8001 # 修改主机名称（Eureka Instance中status中的显示问题）
-    prefer-ip-address: true # 访问路显示IP地址:
-    # lease-renewal-interval-in-seconds: 1 # 向Eureka客户端向服务端发送心跳的时间间隔，默认30s
-    # lease-expiration-duration-in-seconds: 90 # Eureka服务端收到最后一次心跳的等待时间上限，默认90s,超时剔除服务
+  instance:
+   instance-id: paycenter8002 # 修改主机名称（Eureka Instance中status中的显示问题）
+   prefer-ip-address: true # 访问路显示IP地址
