@@ -10,10 +10,13 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>eurekacenter</module>
+        <module>eurekacenter2</module>
         <module>paycenter</module>
+        <module>paycenter2</module>
         <module>ordercenter</module>
         <module>common</module>
-        <module>eurekacenter</module>
+        <module>zookeepercenter</module>
     </modules>
 
     <properties>

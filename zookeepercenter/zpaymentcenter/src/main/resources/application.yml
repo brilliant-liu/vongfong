@@ -1,0 +1,16 @@
+server:
+  port: 8004
+
+spring:
+  application:
+    name: zpaymentcenter
+  cloud:
+    zookeeper:
+      connect-string: 127.0.0.1:8004（zookeeper的IP地址）
+
+    consul:
+      host: localhost
+      port: 8080
+      discovery:
+        #hostname: 127.0.0.1
+        service-name: ${spring.application.name}
