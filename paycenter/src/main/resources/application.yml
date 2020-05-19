@@ -12,6 +12,7 @@ spring:
     username: icopdb-dev
     password: icopdb
 
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.icop.vongfong.entities
@@ -29,3 +30,6 @@ eureka:
     prefer-ip-address: true # 访问路显示IP地址:
     # lease-renewal-interval-in-seconds: 1 # 向Eureka客户端向服务端发送心跳的时间间隔，默认30s
     # lease-expiration-duration-in-seconds: 90 # Eureka服务端收到最后一次心跳的等待时间上限，默认90s,超时剔除服务
+
+
+
