@@ -1,0 +1,40 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: getewaycenter
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启从注册中心动态获取路由的路径，利用服务蒙进行路由
+      routes:
+        - id: payment_routh  # 路由ID,没有固定的ID,但是要求唯一，建议配合服务名
+          uri: lb://paycenter # 匹配后提供的路由地址 ，这里的“lb”，表示uri的协议，表示启用负载均衡功能。
+          # uri: http://localhost:8001 # 匹配后提供的路由地址
+          predicates: # 具体的断言处理类型可参考官网
+            - Path=/payment/get/** # 路径相匹配的进行路由转发
+            - After=2020-05-23T15:12:54.978+08:00[Asia/Shanghai] # 该时间后，可以访问
+          filters: # 具体的断言处理类型可参考官网
+            - AddRequestParameter=X-Request-Id,1024 # 过滤器工厂会在匹配请求头上添加一对请求头，名称为X-Request-id值位1024
+
+
+#        - id: hystrix_routh
+#          uri: http://localhost:8004
+#          predicates:
+#            - Path=/hystrix/services/**
+
+
+eureka:
+  instance:
+    instance-id: getwaycenter9527 # 修改主机名称（Eureka Instance中status中的显示问题）
+    prefer-ip-address: true # 访问路显示IP地址
+    hostname: getwaycenter9527
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka # ,http://eureka7002.com:7002/eureka,
+
+

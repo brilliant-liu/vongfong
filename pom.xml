@@ -17,6 +17,10 @@
         <module>ordercenter</module>
         <module>common</module>
         <module>zookeepercenter</module>
+        <module>openfeigncenter</module>
+        <module>hystrixcenter</module>
+        <module>hystrixdashboard</module>
+        <module>getwaycenter</module>
     </modules>
 
     <properties>
