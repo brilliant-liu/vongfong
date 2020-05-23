@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author: liukj
@@ -71,6 +72,17 @@ public class PaymentController {
             }
             result.put(service,list);
         }
-        return new CommonResult<Map>(444,"查询微服务信息："+serverPort,result);
+        return new CommonResult<Map>(200,"查询微服务信息："+serverPort,result);
+    }
+
+    @GetMapping(value = "/payment/timeout")
+    public CommonResult paymentFeignTimeOut(){
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return new CommonResult (200,"服务超时："+serverPort,null);
     }
 }
