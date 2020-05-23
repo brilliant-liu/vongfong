@@ -11,12 +11,10 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import javax.annotation.Resource;
 import org.springframework.web.multipart.MultipartFile;
-
 import javax.annotation.Resource;
 import java.io.File;
 import java.io.IOException;
