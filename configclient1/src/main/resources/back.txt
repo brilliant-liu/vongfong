@@ -1,0 +1,32 @@
+
+
+server:
+  port: 3355
+
+spring:
+  application:
+    name: configclient1
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka # ,http://eureka7002.com:7002/eureka,
+  instance:
+    instance-id: configclient1 # 修改主机名称（Eureka Instance中status中的显示问题）
+    prefer-ip-address: true # 访问路显示IP地址
+
+ribbon:
+  ReadTimeout: 10000 # 建立连接从服务器读取到可用资源所用的时间
+  ConnectionTimeout: 10000 # 建立连接所用时间
+
+logging:
+  level:
+    com.icop.vongfong.services.ServicesInterface: debug # feign以什么级别记录
+
+# feign启动服务降级hystrix
+feign:
+  hystrix:
+    enabled: true

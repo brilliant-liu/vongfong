@@ -1,0 +1,43 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: configcenter
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/brilliant-liu/vongfongcc.git
+          search-paths:
+            - vongfongcc
+          default-label: master
+
+  ## rabbitMQ配置
+  rabbitmq:
+    host: 106.54.87.66
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka # 单机版
+      # defaultZone: http://eureka7002.com:7002/eureka,http://eureka7001.com:7001/eureka
+    eureka-server-u-r-l-context:
+  instance:  # actuator微服务信息配置
+    instance-id: configcenter3344 # 修改主机名称（Eureka Instance中status中的显示问题）
+    prefer-ip-address: true # 访问路显示IP地址:
+    # lease-renewal-interval-in-seconds: 1 # 向Eureka客户端向服务端发送心跳的时间间隔，默认30s
+    # lease-expiration-duration-in-seconds: 90 # Eureka服务端收到最后一次心跳的等待时间上限，默认90s,超时剔除服务
+
+# 消息中线bus
+management:
+  endpoints: # 暴漏bus刷新配置的端点
+    web:
+      exposure:
+        include: 'bus-refresh'
