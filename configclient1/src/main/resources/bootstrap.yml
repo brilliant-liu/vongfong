@@ -1,0 +1,57 @@
+
+
+
+# server:
+#  port: 3355
+
+spring:
+#  application:
+#    name: configclient1
+  cloud:
+    config:
+      label: master # 分子
+      # name: configclient1-dev.yml  # 配置文件名称
+      name: configclient1  # 配置文件名称
+      profile: dev # 读取后缀
+      uri: http://config-3344.com:3344 # 会从master分子上的configclient1-dev.yml配置文件，读取http://config-3344.com:3344/configclient1/dev文件
+  # 消息中线bus
+  ## rabbitMQ配置
+  rabbitmq:
+    host: 106.54.87.66
+    port: 5672
+    username: guest
+    password: guest
+
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://eureka7001.com:7001/eureka # ,http://eureka7002.com:7002/eureka,
+#  instance:
+#    instance-id: configclient1 # 修改主机名称（Eureka Instance中status中的显示问题）
+#    prefer-ip-address: true # 访问路显示IP地址
+#
+#ribbon:
+#  ReadTimeout: 10000 # 建立连接从服务器读取到可用资源所用的时间
+#  ConnectionTimeout: 10000 # 建立连接所用时间
+#
+#logging:
+#  level:
+#    com.icop.vongfong.services.ServicesInterface: debug # feign以什么级别记录
+#
+## feign启动服务降级hystrix
+#feign:
+#  hystrix:
+#    enabled: true
+# management:
+#   endpoints:
+#     web:
+#       exposure:
+#         include: "*"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+

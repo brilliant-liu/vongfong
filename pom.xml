@@ -21,6 +21,8 @@
         <module>hystrixcenter</module>
         <module>hystrixdashboard</module>
         <module>getwaycenter</module>
+        <module>configcenter</module>
+        <module>configclient1</module>
     </modules>
 
     <properties>
