@@ -23,6 +23,8 @@
         <module>getwaycenter</module>
         <module>configcenter</module>
         <module>configclient1</module>
+        <module>streamproducer</module>
+        <module>consumercenter</module>
     </modules>
 
     <properties>
